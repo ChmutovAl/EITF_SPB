@@ -1,0 +1,95 @@
+/*=======================================
+    03.18 Footer CSS
+=========================================*/
+.footer-area {
+    background-color: #202020;
+
+    & .footer-widget-area {
+        padding: 80px 0;
+        
+        @media #{$large-mobile} {
+            padding: 60px 0;
+        }
+        & .widget-item {
+            & .widget-title {
+                color: $white;
+                font-size: 14px;
+                margin-bottom: 25px;
+                font-weight: 500;
+            }
+        }
+
+        & .about-widget {
+            & p {
+                color: $gray-300;
+                margin-bottom: 15px;
+            }
+            & .social-icons {
+                & a {
+                    color: $gray-300;
+                    margin-right: 16px;
+                    transition: all 0.3s ease-out;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        & .widget-list, & .widget-post {
+            & li {
+                margin-bottom: 15px;
+                display: flex;
+                flex-wrap: wrap;
+
+                & a {
+                    color: $gray-300;
+                    transition: .3s;
+                    line-height: 1.8;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        & .widget-instagram {
+            display: flex;
+            flex-wrap: wrap;
+            & li {
+                border-bottom: 1px solid #202020;
+                border-left: 1px solid #202020;
+                width: 50%;
+            }
+        }
+    }
+  }
+.footer-area {
+    & .footer-bottom {
+        border-top: 1px solid rgba(66, 66, 66, 0.4);
+        padding: 15px 0 14px;
+
+        & .copyright-content {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            & p {
+                color: $gray-300;
+                font-size: 14px;
+
+                & a {
+                    color: $white;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+  

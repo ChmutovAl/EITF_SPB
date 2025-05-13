@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Федерация EITF Санкт-Петербурга {% endblock %}</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href={% static 'images/favicon.ico' %}>
+
+    <!-- Vendor CSS (Icon Font) -->
+
+    <!-- 
+<link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
+<link rel="stylesheet" href="assets/css/vendor/icofont.min.css" />
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" /> 
+-->
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+    <!-- 
+<link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
+<link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+<link rel="stylesheet" href="assets/css/plugins/aos.min.css" />
+<link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
+<link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
+<link rel="stylesheet" href="assets/css/plugins/magnific-popup-min.css" /> 
+-->
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+
+
+    <link rel="stylesheet" href={% static 'css/vendor/vendor.min.css' %}>
+    <link rel="stylesheet" href={% static 'css/plugins/plugins.min.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/style.css' %}>
+
+
+    <!-- Main Style CSS -->
+
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+
+
+</head>
+
+<body>
+
+    <!-- Header Section Start -->
+    <div class="header">
+        <div class="sticky-header">
+            <div class="header-container container-fluid">
+                <div class="header-wrapper">
+
+                    <!-- Header Logo Start -->
+
+                    <div class="header-logo">
+                        <a href="index.html"><img src={% static 'images/logo/logo.png' %} alt="Logo"></a>
+                    </div>
+
+                    <!-- Header Logo End -->
+
+                    <!-- Header Menu Start -->
+                    <div class="main-menu d-none d-lg-flex">
+                        <ul>
+                            {% include '_nav.html' %}
+                        </ul>
+                    </div>
+                    <!-- Header Menu End -->
+
+                    <!-- Header Social Actions Start -->
+                    <div class="header-social-actions">
+                        <div class="header-social d-none d-lg-block">
+                            <ul>
+                                {% include '_social.html' %}
+                            </ul>
+                        </div>
+
+                        <div class="header-actions">
+                            <!-- Mobile Menu Hambarger Action Button Start -->
+                            <a class="header-action-btn header-action-search d-flex" href="#/">
+                                <i class="fa fa-search"></i>
+                            </a>
+                            <!-- Mobile Menu Hambarger Action Button End -->
+                            <!-- Mobile Menu Hambarger Action Button Start -->
+                            <a class="header-action-btn header-action-btn-menu d-flex" href="#/">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                            <!-- Mobile Menu Hambarger Action Button End -->
+                        </div>
+
+                    </div>
+                    <!-- Header Social Actions End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Section End -->
+{% block content %}
+
+{% endblock %}
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="section footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--== Start Footer Widget Area ==-->
+                    <div class="footer-widget-area">
+                        <div class="row m-b-n40">
+                            <div class="col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1100">
+                                <div class="widget-item pb-sm-20">
+                                    <h4 class="widget-title">WE ARE CREATIVE AGENCY</h4>
+                                    <div class="about-widget">
+                                        <p>Nunc ut vehicula ante. Donec cursus felis diam, at vulputate ligula sollicitudin at. Vivamus massa lorem Lorem Ipsum is simple.</p>
+                                        <div class="social-icons">
+                                            <a href="#/"><i class="fa fa-facebook"></i></a>
+                                            <a href="#/"><i class="fa fa-twitter"></i></a>
+                                            <a href="#/"><i class="fa fa-pinterest-p"></i></a>
+                                            <a href="#/"><i class="fa fa-dribbble"></i></a>
+                                            <a href="#/"><i class="fa fa-behance"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-3 d-flex justify-content-start justify-content-lg-center m-b-40" data-aos="fade-up" data-aos-duration="1500">
+                                <div class="widget-item">
+                                    <h4 class="widget-title">COMPANY</h4>
+                                    <ul class="widget-list">
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="contact.html">Jobs</a></li>
+                                        <li><a href="contact.html">Press</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="blog-details.html">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="2000">
+                                <div class="widget-item">
+                                    <h4 class="widget-title">RECENT POST</h4>
+                                    <ul class="widget-post">
+                                        <li><a href="blog-details.html">Multi-purpose Creative Template</a></li>
+                                        <li><a href="blog-details.html">Design is inherently optimistic. that is its power.</a></li>
+                                        <li><a href="blog-details.html">I wish someone would ask me to design a cathedral</a></li>
+                                        <li><a href="blog-details.html">We help the elderly use the internet</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="2500">
+                                <div class="widget-item">
+                                    <h4 class="widget-title">REFOLLOW US INSTAGRAM</h4>
+                                    <ul class="widget-instagram">
+                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/2.jpg" alt="Image-HasTech"></a></li>
+                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/3.jpg" alt="Image-HasTech"></a></li>
+                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/1.jpg" alt="Image-HasTech"></a></li>
+                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/4.jpg" alt="Image-HasTech"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--== End Footer Widget Area ==-->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-content">
+                            <p class="mb-0">© 2021 <strong class="text-color-gray">Triball </strong> Made with <i class="icofont-heart-alt text-color-primary"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!-- Scroll Top Start -->
+    <a href="#" class="scroll-top show" id="scroll-top">
+        <i class="arrow-top icofont-bubble-up"></i>
+        <i class="arrow-bottom icofont-bubble-up"></i>
+    </a>
+    <!-- Scroll Top End -->
+
+    <!-- Mobile Menu Start -->
+    <div class="mobile-menu-wrapper">
+        <div class="offcanvas-overlay"></div>
+
+        <!-- Mobile Menu Inner Start -->
+        <div class="mobile-menu-inner">
+
+            <!-- Button Close Start -->
+            <div class="offcanvas-btn-close">
+                <i class="icofont-close-line"></i>
+            </div>
+            <!-- Button Close End -->
+
+            <!-- Mobile Menu Inner Wrapper Start -->
+            <div class="mobile-menu-inner-wrapper">
+
+                <!-- Mobile Menu Start -->
+                <div class="mobile-navigation">
+                    <nav>
+                        <ul class="mobile-menu">
+                            {% include '_nav.html' %}
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Mobile Menu End -->
+
+                <!-- Contact Links/Social Links Start -->
+                <div class="mt-auto bottom-0">
+
+                    <!-- Contact Links Start -->
+                    <ul class="contact-links">
+                        <li><i class="icofont-phone"></i><a href="tel:+0123456789"> +012 3456 789</a></li>
+                        <li><i class="icofont-envelope-open"></i><a href="mailto:info@example.com"> info@example.com</a></li>
+                        <li><i class="icofont-wall-clock"></i> <span>Monday - Sunday 9.00 - 18.00</span> </li>
+                    </ul>
+                    <!-- Contact Links End -->
+
+                    <div class="header-social">
+                        <ul>
+                            {% include '_social.html' %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Contact Links/Social Links End -->
+            </div>
+            <!-- Mobile Menu Inner Wrapper End -->
+
+        </div>
+        <!-- Mobile Menu Inner End -->
+    </div>
+    <!-- Mobile Menu End -->
+
+    <!-- Offcanvas Search Start -->
+    <div class="offcanvas-search">
+        <div class="offcanvas-search-inner">
+
+            <!-- Button Close Start -->
+            <div class="offcanvas-btn-close">
+                <i class="icofont-close-line"></i>
+            </div>
+            <!-- Button Close End -->
+
+            <!-- Offcanvas Search Form Start -->
+            <form class="offcanvas-search-form" action="#">
+                <input type="text" placeholder="Search Here" class="offcanvas-search-input">
+            </form>
+            <!-- Offcanvas Search Form End -->
+
+        </div>
+    </div>
+    <!-- Offcanvas Search End -->
+
+    <!-- Global Vendor, plugins JS -->
+
+    <!-- Vendor JS -->
+
+    <!-- 
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script> 
+    -->
+
+    <!-- Plugins JS -->
+
+    <!-- 
+    <script src="assets/js/plugins/aos.min.js"></script>
+    <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/plugins/jquery-ui.min.js"></script>
+    <script src="assets/js/plugins/nice-select.min.js"></script>
+    <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script> 
+    -->
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+
+
+    <script src={% static 'js/vendor.min.js' %}></script>
+    <script src={% static 'js/plugins.min.js' %}></script>
+
+
+    <!--Main JS-->
+    <script src={% static 'js/main.js' %}></script>
+
+</body>
+
+</html>

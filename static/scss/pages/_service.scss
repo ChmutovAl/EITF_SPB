@@ -1,0 +1,57 @@
+/*=======================================
+    4.02 Service CSS
+=========================================*/
+.single-service {
+    max-width: 310px;
+    margin: 0 auto;
+    @media #{$small-mobile} {
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    @media #{$extra-small-mobile} {
+        max-width: 250px;
+    }
+    & .service-icon{
+        margin-bottom: 20px;
+    }
+    & .title {
+        margin-bottom: 15px;
+    }
+    & .btn-link {
+        font-size: 14px;
+        color: $dark;
+        text-decoration: none;
+        line-height: 1;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+.service-layer-image {
+    position: relative;
+    height: 577px;
+
+    & .about-image-1 {
+        box-shadow: rgba(149, 158, 165, 1) 0px 0px 41px;
+        border-radius: 50px;
+    }
+
+    & .about-image-2 {
+        position: absolute;
+        right: 0px;
+        top: 255px;
+    }
+}
+.service-image-right {
+    display: flex;
+    justify-content: flex-end;
+    @media #{$tablet-device, $large-mobile} {
+        justify-content: flex-start;
+    }
+}
+.service-image-left {
+    display: flex;
+    justify-content: flex-start;
+}

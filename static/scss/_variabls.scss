@@ -1,0 +1,63 @@
+//=======================
+// Developer Variable
+//=======================
+
+// Responsive Variables
+$extraBig-device: "only screen and (min-width: 1600px)";
+$laptop-device: "only screen and (min-width: 1200px) and (max-width: 1599px)";
+$desktop-device: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$tablet-device: "only screen and (min-width: 768px) and (max-width: 991px)";
+$large-mobile: "only screen and (max-width: 767px)";
+$small-mobile: "only screen and (max-width: 575px)";
+$extra-small-mobile: "only screen and (max-width: 479px)";
+
+//===============================
+// Bootstrap Variables Overright
+//===============================
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Gray Color 
+$gray-100: #f7f7f7;
+$gray-200: #c0c0c0;
+$gray-300: #888888;
+$gray-400: #8a8a8a;
+$gray-500: #4f4f4f;
+$gray-900: #212529;
+
+$primary: #a295df;
+$secondary: #1f3f37;
+$success: #f7a582;
+$dark: #232324;
+$white: #ffffff;
+$overlay-black: #000000;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+	"primary": $primary,
+	"secondary": $secondary,
+	"success": $success,
+	"dark": $dark,
+	"whited": $white,
+	"overlay-black": $dark,
+	"gray": $gray-100,
+);
+// scss-docs-end theme-colors-map
+
+// Options
+
+$body-color: $gray-400;
+
+// Transition
+$transition-base: all 0.3s ease 0s;
+
+// stylelint-enable value-keyword-case
+$font-family-base: 'Montserrat', sans-serif;
+
+
+$headings-font-family: 'Vidaloka', serif;
+$headings-font-weight: 600;
+$headings-line-height: 1.2;
+$headings-color: $dark;

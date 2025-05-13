@@ -1,0 +1,268 @@
+/*----------------------------------------*/
+/*  03. Component CSS
+/*----------------------------------------*/
+
+/*=======================================
+    03.01 Header CSS
+=========================================*/
+
+// Header Section 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+// Sticky Header 
+.sticky-header {
+    &.sticky { 
+        background: $dark;
+        // animation: fadeInDown .5s ease-in-out;
+        transition: $transition-base;
+
+        .header-logo {
+            line-height: 90px;
+            transition: $transition-base;
+        }
+
+        .main-menu {
+            & > ul {
+                & > li {
+                    & > a {
+                        line-height: 90px;
+                        transition: $transition-base;
+                    }
+                }
+            }
+        }
+
+        .header-social-actions {
+            line-height: 90px;
+            transition: $transition-base;
+            & .header-action-btn-menu {
+                line-height: 90px;
+                transition: $transition-base;
+            }
+        }
+    }
+}
+
+// Header Wapper 
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.header-logo {
+    max-width: 120px;
+    width: 100%;
+    line-height: 100px;
+    transition: $transition-base;
+    @media #{$large-mobile} {
+        line-height: 90px;
+    }
+    @media #{$extra-small-mobile} {
+        max-width: 120px;
+    }
+}
+
+/* Main Menu */
+.main-menu {
+    display: flex;
+    justify-content: center;
+    & > ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-bottom: 0;
+        padding-left: 0;
+
+        list-style: none;
+        & > li {
+            & > a {
+                font-size: 12px;
+                line-height: 100px;
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $white;
+                position: relative;
+                margin: 0 40px 0 0;
+                transition: $transition-base;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    background: #a6a7a8;
+                    height: 1px;
+                    width: 0%;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transition: $transition-base;
+                }
+                &.active {
+                    &::after {
+                        width: 100%;
+                        transition: $transition-base;
+                    }
+                }
+            }
+            &:hover {
+                & > a {
+                    &::after {
+                        width: 100%;
+                        transition: $transition-base;
+                    }
+                }
+            }
+            &:last-child {
+                & > a {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    & ul {
+        & .has-children {
+            position: relative;
+            & > .sub-menu {
+                position: absolute;
+                background: $white;
+                box-shadow: 0 0 6px -3px;
+                width: 200px;
+                transform-origin: 0 0 0;
+                transform: scaleY(0);
+                transition: all 0.3s ease-in-out;
+                z-index: 9;
+                padding-left: 0;
+                border-bottom: 3px solid $primary;
+
+                & > li {
+                    list-style: none;
+                    
+                    & > a {
+                        padding: 10px 25px;
+                        display: block;
+                        line-height: 1.7;
+                        text-decoration: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        border-bottom: 1px dashed #efefef;
+                        color: $gray-900;
+
+                        &:hover {
+                            color: $primary;
+                            padding-left: 30px;
+                        }
+                    }
+
+                    &:last-child {
+                        & > a {
+                            border-bottom: 0px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                & .sub-menu {
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+}
+
+// Header Social Action 
+.header-social-actions {
+    line-height: 100px;
+    transition: $transition-base;
+    display: flex;
+    @media #{$large-mobile} {
+        line-height: 90px;
+    }
+    & .header-social {
+        margin-right: 30px;
+        & ul {
+            display: flex;
+            & li {
+                & a {
+                  font-size: 15px;
+                  color: $white;
+                  padding: 0 10px;
+
+                  &:hover {
+                      color: $primary;
+                  }
+                }
+            }
+        }
+    }
+    & .header-actions {
+        display: flex;
+        align-items: center;
+
+        & .header-action-search {
+            color: $white;
+            font-size: 15px;
+            padding-right: 20px;
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        & .header-action-btn-menu {
+            line-height: 100px;
+            position: relative;
+            cursor: pointer;
+            height: 16px;
+            width: 15px;
+            & span{
+                list-style: none;
+                width: 15px;
+                height: 2px;
+                background: #fff;
+                position: absolute;
+                left: 0;
+                transform: translateY(-50%);
+                box-shadow: 0 0 7px rgba(0,0,0,.5);
+                transition: .9s;
+                &:nth-of-type(1){
+                    top: 20%;
+                }
+                &:nth-of-type(2){
+                    top: 50%;
+                }
+                &:nth-of-type(3){
+                    top: 80%;
+                }
+            }
+            &.open{
+                & span {
+                    &:nth-of-type(1){
+                        top: 50%;
+                        transform: translateY(-50%) rotate(45deg) rotateY(180deg);
+                    }
+                    &:nth-of-type(2){
+                        // opacity: 0;
+                        width: 0;
+                    }
+                    &:nth-of-type(3){
+                        top: 50%;
+                        transform: translateY(-50%) rotate(-45deg) rotateY(180deg);
+                    }
+                }
+            }
+            &:hover {
+                & span {
+                    background: $primary;
+                }
+            }
+        }
+    }
+
+}

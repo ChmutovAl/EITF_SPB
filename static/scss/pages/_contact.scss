@@ -1,0 +1,87 @@
+/*=======================================
+    4.04 Contact CSS
+=========================================*/
+.contact-content {
+    max-width: 424px;
+
+    & .section-title {
+        padding-bottom: 40px;
+        & .title {
+            letter-spacing: .5px;
+            margin-bottom: 20px;
+        }
+    }
+
+    & .single-contact {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: $gray-500;
+        }
+
+        & p {
+            color: $gray-500;
+        }
+
+        & a {
+            color: $gray-500;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+.contact-form-wrapper {
+    max-width: 630px;
+    background: $gray-100;
+    padding: 100px 60px;
+    border-radius: 40px;
+    margin-left: auto;
+    
+    @media #{$tablet-device} {
+        max-width: 100%;
+    }
+    @media #{$large-mobile} {
+        max-width: 100%;
+        padding: 50px 40px;
+    }
+    @media #{$extra-small-mobile} {
+        padding: 50px 20px;
+    }
+
+    & .section-title {
+        & .title {
+            font-size: 24px;
+        }
+        & span {
+            margin-top: 15px;
+        }
+    }
+
+    & .input-area {
+        & .input-item, & .textarea-item {    
+            padding: 10px 15px;
+            background: #f8f8f8;
+            border: 1px solid $gray-200;
+            transition: .3s;
+            width: 100%;
+            font-size: 14px;
+            border-radius: 10px;
+
+            &:focus {
+                border: 1px solid $primary;
+                outline: 0px;
+                box-shadow: none;
+            }
+        }
+    }
+}
