@@ -68,6 +68,29 @@
                             {% include '_nav.html' %}
                         </ul>
                     </div>
+<script>
+        // Проверяем весь объект window.location
+        console.log("Полный объект window.location:", window.location);
+
+        // Получаем текущий URL
+        const currentUrl = window.location.pathname;
+        console.log("Текущий URL:", currentUrl); // Отладочное сообщение
+
+        // Получаем все ссылки в меню
+        const menuLinks = document.querySelectorAll('.main-menu a');
+
+        // Проходим по всем ссылкам и добавляем класс active к активной
+        menuLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            console.log("Проверяем ссылку:", linkHref); // Отладочное сообщение
+            if (linkHref === currentUrl) {
+                console.log("Найдена активная ссылка:", linkHref); // Отладочное сообщение
+                link.classList.add('active');
+            }
+        });
+    </script>
+                    
+                    
                     <!-- Header Menu End -->
 
                     <!-- Header Social Actions Start -->
@@ -80,9 +103,6 @@
 
                         <div class="header-actions">
                             <!-- Mobile Menu Hambarger Action Button Start -->
-                            <a class="header-action-btn header-action-search d-flex" href="#/">
-                                <i class="fa fa-search"></i>
-                            </a>
                             <!-- Mobile Menu Hambarger Action Button End -->
                             <!-- Mobile Menu Hambarger Action Button Start -->
                             <a class="header-action-btn header-action-btn-menu d-flex" href="#/">
@@ -112,22 +132,18 @@
                     <!--== Start Footer Widget Area ==-->
                     <div class="footer-widget-area">
                         <div class="row m-b-n40">
-                            <div class="col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1100">
+                            <div class="col-sm-6 col-md-6 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1100">
                                 <div class="widget-item pb-sm-20">
                                     <h4 class="widget-title">Федерация EITF Санкт-Петербурга</h4>
                                     <div class="about-widget">
-                                        <p>Nunc ut vehicula ante. Donec cursus felis diam, at vulputate ligula sollicitudin at. Vivamus massa lorem Lorem Ipsum is simple.</p>
+                                        <p>Наша цель сделать тхэквондо доступным и привлекательным вне зависимости от возраста, уровня подготовки и физических особенностей для жителей Санкт-Петербурга. </p>
                                         <div class="social-icons">
-                                            <a href="#/"><i class="fa fa-facebook"></i></a>
-                                            <a href="#/"><i class="fa fa-twitter"></i></a>
-                                            <a href="#/"><i class="fa fa-pinterest-p"></i></a>
-                                            <a href="#/"><i class="fa fa-dribbble"></i></a>
-                                            <a href="#/"><i class="fa fa-behance"></i></a>
+                                            <a href="https://vk.com/eitf_spb"><i class="fa fa-vk"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-6 col-lg-3 d-flex justify-content-start justify-content-lg-center m-b-40" data-aos="fade-up" data-aos-duration="1500">
+                            <div class="col-sm-6 col-md-6 col-lg-4 d-flex justify-content-start justify-content-lg-center m-b-40" data-aos="fade-up" data-aos-duration="1500">
                                 <div class="widget-item">
                                     <h4 class="widget-title">Меню</h4>
                                     <ul class="widget-list">
@@ -135,21 +151,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="2000">
+                            <div class="col-sm-6 col-md-6 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="2000">
                                 <div class="widget-item">
                                     <h4 class="widget-title">Последние посты</h4>
                                         {% show_footer_posts %}
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="2500">
-                                <div class="widget-item">
-                                    <h4 class="widget-title">REFOLLOW US INSTAGRAM</h4>
-                                    <ul class="widget-instagram">
-                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/2.jpg" alt="Image-HasTech"></a></li>
-                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/3.jpg" alt="Image-HasTech"></a></li>
-                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/1.jpg" alt="Image-HasTech"></a></li>
-                                        <li><a href="#/"><img class="fit-image" src="assets/images/instagram/4.jpg" alt="Image-HasTech"></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -208,13 +213,13 @@
                 <!-- Contact Links/Social Links Start -->
                 <div class="mt-auto bottom-0">
 
-                    <!-- Contact Links Start -->
+                    <!-- Contact Links Start 
                     <ul class="contact-links">
                         <li><i class="icofont-phone"></i><a href="tel:+0123456789"> +012 3456 789</a></li>
                         <li><i class="icofont-envelope-open"></i><a href="mailto:info@example.com"> info@example.com</a></li>
                         <li><i class="icofont-wall-clock"></i> <span>Monday - Sunday 9.00 - 18.00</span> </li>
                     </ul>
-                    <!-- Contact Links End -->
+                    Contact Links End -->
 
                     <div class="header-social">
                         <ul>
@@ -242,9 +247,7 @@
             <!-- Button Close End -->
 
             <!-- Offcanvas Search Form Start -->
-            <form class="offcanvas-search-form" action="#">
-                <input type="text" placeholder="Search Here" class="offcanvas-search-input">
-            </form>
+
             <!-- Offcanvas Search Form End -->
 
         </div>

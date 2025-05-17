@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load static %}
+{% block title %} {{ post.title }} {% endblock %}
+{% block content %}
+    <!-- Breadcrumb Section Start -->
+    <div class="section breadcrumb-section overlay" data-bg-image="{{ post.banner.url }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Breadcrumb wrapper Start -->
+                    <div class="breadcrumb-wrapper">
+                        <h1 class="title text-white" data-aos="fade-up" data-aos-duration="1100">{{ post.title }}</h1>
+                        
+                    </div>
+                    <!-- Breadcrumb wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+    
+    
+    <div class="section section-margin">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8 m-auto p-lg-0">
+                    <div class="blog-details-wrapper">
+                        <div class="blog-details-image m-b-40" data-aos="fade-up" data-aos-duration="1100">
+                            <img src='{{ post.banner.url }}' alt="Blog Details">
+                        </div>
+                        <div class="single-blog-meta m-b-20" data-aos="fade-up" data-aos-duration="1200">
+                            <span>Опубликовано: {{ post.date_create }} {% if post.date_updatea %}/ Изменено: {{ post.date_update }} {% endif %}</span>
+                        </div>
+                        <h2 class="blog-details-title m-b-20" data-aos="fade-up" data-aos-duration="1300">{{ post.title }}</h2>
+                        <p class="text" data-aos="fade-up" data-aos-duration="1100">{{ post.content }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

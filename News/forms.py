@@ -2,8 +2,9 @@ from django import forms
 from .models import *
 
 class FeedbackForm(forms.Form):
-    last_name = forms.CharField(max_length=120)
-    name = forms.CharField(max_length=120)
-    email = forms.EmailField()
-    type = forms.ChoiceField()
-    message = forms.CharField(widget=forms.Textarea)
+    last_name = forms.CharField(label='Фамилия', max_length=120, widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
+    name = forms.CharField(label='Имя', max_length=120, widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    phone = forms.CharField(label='Телефон', max_length=120, widget=forms.TextInput(attrs={'placeholder': 'Телефон'}))
+    type = forms.ChoiceField(choices=(('Спортивный клуб', 'Спортивный клуб'), ('Инструктор', 'Инструктор'), ('Спортсмен', 'Спортсмен')))
+    message = forms.CharField(label='Текст сообщения', widget=forms.Textarea(attrs={'placeholder':'Напишите более подробную информацию или свой вопрос'}))

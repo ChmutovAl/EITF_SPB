@@ -31,13 +31,13 @@
                     <!-- Single Blog Wrapper Start -->
                     <div class="single-blog-wrapper">
                         <div class="single-blog-thumb">
-                            <a class="image" href="blog-details.html"><img src='{{ post.banner }}' alt="Blog Image"></a>
+                            <a class="image" href="{{ post.get_absolute_url }}"><img src='{{ post.banner.url }}' alt="Blog Image"></a>
                         </div>
                         <div class="single-blog-content bg-color-gray">
                             <div class="blog-meta">
                                 <span>{{ post.date_create }}</span>
                             </div>
-                            <h4 class="title"><a href="blog-details.html">{{ post.title }}</a></h4>
+                            <h4 class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
                             <p>{{ post.about }}</p>
                         </div>
                     </div>

@@ -1,8 +1,11 @@
 from django.db import models
+from django.urls import reverse
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок')
     about = models.CharField(max_length=500, verbose_name='Краткое описание')
+    slug = models.SlugField(max_length=100, unique=True, blank=True, verbose_name='Slug')
     content = models.TextField(verbose_name='Текст')
     banner = models.ImageField(upload_to='post_image', verbose_name='Баннер записи')
     date_create = models.DateField(auto_now_add=True, verbose_name='Дата создания')
@@ -11,9 +14,16 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        """
+        Получаем прямую ссылку на статью
+        """
+        return reverse('post_detail', kwargs={'slug': self.slug})
+
 
 class Club(models.Model):
     name = models.CharField(max_length=200, unique=True, verbose_name='Название')
+    slug = models.SlugField(max_length=100, unique=True, blank=True, verbose_name='Slug')
     manager = models.CharField(max_length=200, verbose_name='Руководитель клуба')
     about = models.TextField(verbose_name='Описание')
     students = models.IntegerField(verbose_name='Количество занимающихся')

@@ -1,7 +1,28 @@
 <div class="contact-form">
                         {% csrf_token %}
                         <form action="#/">
-
-                                {{form.as_p}}
+                                <div class="row m-b-n30">
+                                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1100">
+                                    {{form.last_name}}
+                                </div>
+                                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1300">
+                                    {{form.name}}
+                                </div>
+                                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1500">
+                                    {{form.email}}
+                                </div>
+                                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1700">
+                                    {{ form.phone }}
+                                </div>
+                                <div class="col-12 m-b-30" data-aos="fade-up" data-aos-duration="1900">
+                                    {{form.type}}
+                                </div>
+                                <div class="col-12 m-b-30" data-aos="fade-up" data-aos-duration="1900">
+                                    {{form.message}}
+                                </div>
+                                <div class="col-12 text-start m-b-30" data-aos="fade-up" data-aos-duration="2100">
+                                    <button class="btn btn-dark btn-hover-primary">Отправить</button>
+                                </div>
+                            </div>
                         </form>
                     </div>

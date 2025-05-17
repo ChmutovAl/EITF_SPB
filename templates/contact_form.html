@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load static %}
+{% block title %} Контакты {% endblock %}
+{% block content %}
+
+    <!-- Breadcrumb Section Start -->
+    <div class="section breadcrumb-section overlay" data-bg-image="assets/images/breadcrumb/portfolio.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Breadcrumb wrapper Start -->
+                    <div class="breadcrumb-wrapper">
+                        <h1 class="title text-white" data-aos="fade-up" data-aos-duration="1100">Связаться с нами</h1>
+                        
+                    </div>
+                    <!-- Breadcrumb wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Contact Wrapper Start -->
+    <div class="section section-margin">
+        <div class="container">
+            <div class="row align-items-center m-b-n40">
+                <div class="col-lg-5 m-b-40">
+
+                    <div class="contact-content">
+
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2 class="title">Вы можете с нами связаться</h2>
+                            <p>Заполните форму или свяжитесь с нами по контактам ниже</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Single Contact Start -->
+                        <div class="single-contact" data-aos="fade-up" data-aos-duration="1200">
+                            <span class="title">Адрес</span>
+                            <p>г.Санкт-Петербург, Муринская дор., д. 63к1</p>
+                        </div>
+                        <!-- Single Contact End -->
+
+                        <!-- Single Contact Start -->
+                        <div class="single-contact" data-aos="fade-up" data-aos-duration="1400">
+                            <span class="title">Телефон</span>
+                            <a href="tel:8 (800) 222-00-82">+7 (800) 222-00-82</a>
+                        </div>
+                        <!-- Single Contact End -->
+
+                        <!-- Single Contact Start -->
+                        <div class="single-contact" data-aos="fade-up" data-aos-duration="1600">
+                            <span class="title">Email</span>
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </div>
+                        <!-- Single Contact End -->
+
+                    </div>
+
+                </div>
+                <div class="col-lg-7 m-b-40">
+
+                    <!-- Contact Form Wrapper Start -->
+                    <div class="contact-form-wrapper contact-form">
+                        <!-- Section Title Start -->
+                        <div class="section-title p-b-15">
+                            <h4 class="title">Свяжитесь с нами</h4>
+                            <span></span>
+                        </div>
+                        <!-- Section Title End -->
+                        {% csrf_token %}
+                        <form action="/"  method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+
+                                        <div class="col-md-12" data-aos="fade-up" data-aos-duration="1400">
+                                            <div class="input-area m-b-20">
+                                                {{form.last_name|add_class:'input-item'}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12" data-aos="fade-up" data-aos-duration="1600">
+                                            <div class="input-area m-b-20">
+                                                {{form.name|add_class:'input-item'}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12" data-aos="fade-up" data-aos-duration="1800">
+                                            <div class="input-area m-b-20">
+                                                {{form.email|add_class:'input-item'}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12" data-aos="fade-up" data-aos-duration="2000">
+                                            <div class="input-area m-b-40">
+                                                {{ form.phone|add_class:'input-item' }}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12" data-aos="fade-up" data-aos-duration="2200">
+                                            <div class="input-area m-b-40">
+                                                {{ form.type|add_class:'input-item' }}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12" data-aos="fade-up" data-aos-duration="2400">
+                                            <div class="input-area m-b-40">
+                                                {{ form.message|add_class:'textarea-item' }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12" data-aos="fade-up" data-aos-duration="2600">
+                                            <button type="submit" id="submit" name="submit" class="btn btn-dark btn-hover-primary">Отправить</button>
+                                        </div>
+                                        <p class="col-8 form-message mb-0"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Contact Form Wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Wrapper End -->
+
+{% endblock %}
