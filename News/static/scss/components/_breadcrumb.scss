@@ -1,0 +1,81 @@
+/*=======================================
+    03.17 Breadcrumb CSS
+=========================================*/
+.breadcrumb-wrapper {
+    text-align: center;
+    position: relative;
+    z-index: 99;
+    padding-top: 40px;
+    & .title {
+        font-weight: 400;
+        font-size: 56px;
+        margin-bottom: 0;
+        @media #{$desktop-device} {
+            font-size: 46px;
+        }
+        @media #{$tablet-device} {
+            font-size: 40px;
+        }
+        @media #{$large-mobile} {
+            font-size: 36px;
+        }
+        @media #{$small-mobile} {
+            font-size: 30px;
+        }
+    }
+    & .breadcrumb-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        @media #{$tablet-device} {
+            margin-top: 20px;
+        }
+        @media #{$large-mobile} {
+            margin-top: 10px;
+        }
+
+        & li {
+            & a {
+                color: $white;
+                margin-right: 15px;
+                font-size: 16px;
+                position: relative;
+                line-height: 1;
+                &:after{
+                    position: absolute;
+                    content: "/";
+                    right: -10px;
+                    top: 3px;
+                    color: $white;
+                }
+                &:hover {
+                    color: $primary;
+                }
+            }
+            & span {
+                color: $white;
+                font-size: 16px;
+            }
+        }
+        
+    }
+}
+.breadcrumb-section {
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media #{$desktop-device} {
+        height: 450px;
+    }
+    @media #{$tablet-device} {
+        height: 400px;
+    }
+    @media #{$large-mobile} {
+        height: 350px;
+    }
+    @media #{$small-mobile} {
+        height: 300px;
+    }
+}

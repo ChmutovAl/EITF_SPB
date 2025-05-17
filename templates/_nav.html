@@ -1,6 +1,7 @@
-<li><a href="index.html">Главная</a></li>
-<li><a href="about.html">О нас</a></li>
-<li><a href="#/">Новости</a></li>
+<li><a href="{% url  'home'%}">Главная</a></li>
+<li><a href="{% url 'about' %}">О нас</a></li>
+<li><a href="{% url 'news' %}">Новости</a></li>
+<!--
 <li><a href="#/">Таэквондо</a></li>
-<li><a href="#">Клубы</a></li>
-<li><a href="contact.html">Контакты</a></li>
+<li><a href="#">Клубы</a></li>-->
+<li><a href="{% url 'contacts' %}">Контакты</a></li>

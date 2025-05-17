@@ -1,0 +1,115 @@
+/*=======================================
+    03.03 Slider CSS
+=========================================*/
+.slider-section {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    & .slingle-slider {
+        position: relative;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        height: 900px;
+        padding: 50px 0;
+        @media #{$desktop-device} {
+            height: 850px;
+        }
+        @media #{$tablet-device} {
+            height: 700px;
+        }
+        @media #{$large-mobile} {
+            height: 600px;
+        }
+        @media #{$small-mobile} {
+            height: 500px;
+        }
+        @media #{$extra-small-mobile} {
+            height: 400px;
+        }
+
+        & .slider-content {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+
+            & .title {
+                font-size: 80px;
+                font-weight: 400;
+                line-height: 90px;
+                font-family: $headings-font-family;
+                color: $white;
+                text-transform: inherit;
+                letter-spacing: 1px;
+                margin-top: -20px;
+                margin-bottom: 50px;
+                @media #{$desktop-device} {
+                    font-size: 70px;
+                    line-height: 80px;
+                }
+                @media #{$tablet-device, $large-mobile} {
+                    font-size: 50px;
+                    line-height: 60px;
+                    margin-top: -10px;
+                }
+                @media #{$large-mobile} {
+                    margin-bottom: 30px;
+                    font-size: 40px;
+                    line-height: 50px;
+                }
+                @media #{$extra-small-mobile} {
+                    font-size: 30px;
+                    line-height: 40px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            & .btn {
+                font-size: 18px;
+                padding: 18px 38px;
+                @media #{$large-mobile} {
+                    font-size: 16px;
+                    padding: 18px 30px;
+                }
+                @media #{$small-mobile} {
+                    font-size: 14px;
+                    padding: 15px 25px;
+                }
+            }
+        }
+    }
+}
+// Animation Style 
+.animation-style-01{
+
+    & .slider-content{
+        opacity: 0;
+    }
+
+    & .swiper-slide-active{
+        & .slider-content{
+            opacity: 1;
+
+            & .title{
+                animation-name: fadeInUpBig;
+                animation-delay: 0.4s;
+                animation-duration: 2s;
+                animation-fill-mode: both;
+            }
+            & .btn{
+                animation-name: fadeInUpBig;
+                animation-delay: 1.2s;
+                animation-duration: 2s;
+                animation-fill-mode: both;
+            }
+        }
+
+    }
+}

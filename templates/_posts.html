@@ -1,0 +1,34 @@
+    <!-- Blog Section Start -->
+    <div class="section section-margin-bottom">
+        <div class="container">
+            <div class="row m-b-n40">
+                <div class="col-lg-4 m-b-40 align-self-center" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="about-content">
+                        <h2 class="title">Новости и события <br> федерации СПб</h2>
+                        <span></span>
+                        <p>Не на словах, а на деле. <br>Следите за нашими новостями</p>
+                        <a href="blog-details.html" class="btn btn-dark btn-hover-primary m-t-20">Все новости</a>
+                    </div>
+                </div>
+                {% for post in posts %}
+                <div class="col-lg-4 col-sm-6 m-b-40" data-aos="fade-up" data-aos-duration="1500">
+                    <!-- Single Blog Wrapper Start -->
+                    <div class="single-blog-wrapper blog-box">
+                        <div class="single-blog-thumb">
+                            <a class="image" href="blog-details.html"><img src={{ post.banner }} alt="Blog Image"></a>
+                        </div>
+                        <div class="single-blog-content">
+                            <div class="blog-meta">
+                                <span>{{ post.date_create }} </span>
+                            </div>
+                            <h4 class="title"><a href="blog-details.html">{{ post.title }}</a></h4>
+                            <p>{{ post.about }}</p>
+                        </div>
+                    </div>
+                    <!-- Single Blog Wrapper End -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Blog Section End -->

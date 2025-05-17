@@ -1,0 +1,36 @@
+/*=======================================
+    03.08 Testimonial CSS
+=========================================*/
+.testimonial-section{
+    padding: 110px 0;
+}
+.single-testimonial-wrapper {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+
+    & .testimonial-thumb {
+        margin-bottom: 30px;
+    }
+
+    & .testimonial-content {
+        & p {
+            font-family: $headings-font-family;
+            font-size: 24px;
+            color: $white;
+            line-height: 1.6;
+            @media #{$large-mobile} {
+                font-size: 20px;
+            }
+            @media #{$extra-small-mobile} {
+                font-size: 18px;
+            }
+        }
+
+        & span {
+            color: $white;
+        }
+    }
+}

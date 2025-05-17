@@ -1,0 +1,35 @@
+/*=======================================
+    03.07 Analysis CSS
+=========================================*/
+.analysis-section {
+    padding: 50px 0;
+}
+.single-analysis {
+    display: flex;
+
+    & .analysis-number {
+
+        & span {
+            font-size: 24px;
+            font-weight: 400;
+            font-family: $headings-font-family;
+            color: $white;
+            background: $primary;
+            height: 70px;
+            width: 70px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+        }
+    }
+
+    & .analysis-content {
+        margin-left: 20px;
+
+        & .title {
+            margin-bottom: 15px;
+        }
+    }
+}

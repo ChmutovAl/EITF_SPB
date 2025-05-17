@@ -1,0 +1,33 @@
+/*----------------------------------------*/
+/*  04. Pages CSS
+/*----------------------------------------*/
+
+/*=======================================
+    4.01 About CSS
+=========================================*/
+.about-content{
+    max-width: 495px;
+    @media #{$tablet-device} {
+        max-width: 100%;
+    }
+    & span {
+        position: relative;
+        margin-top: 20px;
+        padding-bottom: 30px;
+        display: block;
+
+        &:after {
+            position: absolute;
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: $primary;
+        }
+    }
+}
+.about-image{
+    max-width: 530px;
+    @media #{$tablet-device} {
+        margin-right: auto;
+    }
+}

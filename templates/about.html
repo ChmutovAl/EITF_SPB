@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load static %}
+{%block title %} О нас {% endblock %}
+{% block content %}
+    <!-- Breadcrumb Section Start -->
+    <div class="section breadcrumb-section overlay" data-bg-image={% static 'images/about/kubki.png' %}>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Breadcrumb wrapper Start -->
+                    <div class="breadcrumb-wrapper">
+                        <h1 class="title text-white" data-aos="fade-up" data-aos-duration="1100">О нас</h1>
+                        
+                    </div>
+                    <!-- Breadcrumb wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+    
+        <!-- About Section Start -->
+    <div class="section section-margin">
+        <div class="container">
+            <div class="row m-b-n30">
+                <div class="col-lg-6 align-self-center m-b-30" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="about-content">
+                        <h2 class="title m-b-40">Одна цель, один путь, одна команда!</h2>
+                        <p> 
+Наша цель - сделать тхэквондо доступным и привлекательным вне зависимости от возраста, уровня подготовки и физических особенностей для жителей Санкт-Петербурга. При этом одним из приоритетов является качественное обучение спортсменов и инструкторов техники таэквондо в соответствии с 15-томной энципклопедией таэквондо генерала Чой Хонг Хи и законами биомеханики.
+Также мы уверенны, что качественные соревнования, объективное  судейство, стабильные семинары, нацеленные на повышение уровня знаний и подготовки спортсменов и инструкторского состава поможет сделать нам Таэквондо EITF в Санкт-Петербурге спортом №1! 
+</p>
+                        <p>Мы являемся аккредитованными членами Всероссийской Федерации развития Таэквон-до ИТФ, которая уже более 20 лет функционирует на территории Российской Федерации. 
+Наша команда состоит из настоящих профессионалов своего дела 
+Каждый специалист занимается исключительно своей областью, будь то юрист, методист, спортивный судья, маркетолог, инструктор или вовсе IT специалист. Именно благодаря слаженной работе мы можем смело заявить, что развитие нашей федерации не останавливается ни на секунду!</p>
+                        <a href="about.html" class="btn btn-dark btn-hover-primary m-t-30">Explore Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-first m-b-30" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="about-image me-auto">
+                        <img src="assets/images/about/kubki.png" alt="About Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section End -->
+        <div class="section section-margin-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="section-title text-center">
+                        <h2 class="title">Our Talented People</h2>
+                        <span class="d-flex thick-border justify-content-center"></span>
+                    </div>
+                </div>
+            </div>
+            {% show_staff %}
+        </div>
+        </div>
+    {% include '_brands.html' %}
+{% endblock %}

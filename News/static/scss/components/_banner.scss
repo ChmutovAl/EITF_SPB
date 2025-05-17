@@ -1,0 +1,48 @@
+/*=======================================
+    03.11 Banner CSS
+=========================================*/
+.video-banner-wrapper {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+
+    & .video-banner-content {
+        & p {
+            font-family: $headings-font-family;
+            font-size: 36px;
+            color: $white;
+            line-height: 1.33;
+            @media #{$large-mobile} {
+                font-size: 26px;
+            }
+            @media #{$extra-small-mobile} {
+                font-size: 22px;
+            }
+        }
+    }
+
+    & .video-btn {
+
+        & .btn-play {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto 0;
+            background: $gray-200;
+            height: 60px;
+            width: 60px;
+            border-radius: 100px;
+
+            &:hover {
+                background: $white;
+
+                & img {
+                    filter: invert(67%) sepia(10%) saturate(1858%) hue-rotate(209deg) brightness(93%) contrast(88%);
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}

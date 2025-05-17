@@ -1,0 +1,27 @@
+/*=======================================
+    03.12 Brand CSS
+=========================================*/
+.brand-slider {
+    & .swiper-wrapper {
+        display: flex;
+        align-items: center;
+
+        & .swiper-slide {
+            @media #{$extra-small-mobile} {
+                text-align: center;
+            }
+        }
+    }
+
+    & .brand-item {
+        & img {
+            filter: invert(100%) sepia(1%) saturate(928%) hue-rotate(277deg) brightness(89%) contrast(92%);
+            transition: $transition-base;
+
+            &:hover {
+                filter: invert(75%) sepia(14%) saturate(5784%) hue-rotate(201deg) brightness(93%) contrast(86%);
+                transition: $transition-base;
+            }
+        }
+    }
+}

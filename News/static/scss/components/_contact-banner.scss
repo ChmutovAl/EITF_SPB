@@ -1,0 +1,74 @@
+/*=======================================
+    03.13 Contact Banner CSS
+=========================================*/
+.contact-banner-section {
+    background: $gray-100;
+    max-height: 610px;
+    position: relative;
+    display: flex;
+    @media #{$large-mobile} {
+        flex-direction: column;
+        max-height: inherit;
+    }
+
+    & .contact-form {
+        & input, & textarea {
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #c8c8c8;
+            width: 100%;
+            transition: .3s;
+
+            &:focus {
+                border-bottom: 1px solid $gray-300;
+                transition: .3s;
+            }
+            &::placeholder { 
+                color: $gray-900;
+                opacity: 1;
+              }
+        }
+        & textarea {
+            height: 130px;
+            @media #{$small-mobile} {
+                height: 100px;
+            }
+        }
+    }
+
+    & .contact-banner-container {
+        padding: 60px 15px 60px 60px;
+        width: 62%;
+        margin: 0 0 0 auto;
+        @media #{$tablet-device} {
+            width: 50%;
+            padding: 20px;
+        }
+        @media #{$large-mobile} {
+            width: 100%;
+            padding: 60px 35px;
+        }
+        @media #{$small-mobile} {
+            padding: 60px 15px;
+        }
+    }
+    & .contact-banner-wrapper {
+        max-height: 620px;
+        width: 38%;
+        @media #{$tablet-device} {
+            width: 50%;
+        }
+        @media #{$large-mobile} {
+            width: 100%;
+            max-height: 100%;
+            height: 500px;
+        }
+        @media #{$small-mobile} {
+            height: 400px;
+        }
+        @media #{$extra-small-mobile} {
+            height: 300px;
+        }
+    }
+}

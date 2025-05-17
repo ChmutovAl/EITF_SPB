@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load static %}
+{% block title %} Новости {% endblock %}
+{% block content %}
+    <!-- Breadcrumb Section Start -->
+    <div class="section breadcrumb-section overlay" data-bg-image="assets/images/breadcrumb/portfolio.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Breadcrumb wrapper Start -->
+                    <div class="breadcrumb-wrapper">
+                        <h1 class="title text-white" data-aos="fade-up" data-aos-duration="1100">Новости</h1>
+                        
+                    </div>
+                    <!-- Breadcrumb wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+    
+        <!-- Blog Grid Section Start -->
+    <div class="section section-margin">
+        <div class="container">
+            <div class="row m-b-n30">
+                {% for post in posts %}
+                <div class="col-lg-4 col-sm-6 m-b-30" data-aos="fade-up" data-aos-duration="1100">
+                    <!-- Single Blog Wrapper Start -->
+                    <div class="single-blog-wrapper">
+                        <div class="single-blog-thumb">
+                            <a class="image" href="blog-details.html"><img src='{{ post.banner }}' alt="Blog Image"></a>
+                        </div>
+                        <div class="single-blog-content bg-color-gray">
+                            <div class="blog-meta">
+                                <span>{{ post.date_create }}</span>
+                            </div>
+                            <h4 class="title"><a href="blog-details.html">{{ post.title }}</a></h4>
+                            <p>{{ post.about }}</p>
+                        </div>
+                    </div>
+                    <!-- Single Blog Wrapper End -->
+                </div>
+                {% endfor %}
+
+            </div>
+
+            {% include '_pagination.html' %}
+        </div>
+    </div>
+    <!-- Blog Grid Section End -->
+    
+{% endblock %}

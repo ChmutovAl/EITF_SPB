@@ -1,0 +1,17 @@
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 m-b-n40">
+                {% for user in staff %}
+                <div class="col m-b-40" data-aos="fade-up" data-aos-duration="1100">
+                    <!-- Single Team Start -->
+                    <div class="single-team">
+                        <div class="team-thumb">
+                            <img src={{ user.ava }} alt="Team Image">
+                        </div>
+                        <div class="team-content">
+                            <h4 class="title">{{ user.last_name }} {{ user.name }} {{ user.mid_name }}</h4>
+                            <p>{{ user.position }}</p>
+                        </div>
+                    </div>
+                    <!-- Single Team End -->
+                </div>
+                {% endfor %}
+            </div>

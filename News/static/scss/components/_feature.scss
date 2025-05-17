@@ -1,0 +1,38 @@
+/*=======================================
+    03.09 Feature CSS
+=========================================*/
+.feature-image-wrapper {
+    position: relative;
+    max-width: 470px;
+    margin: 0 auto;
+
+    & .background-shape {
+        position: absolute;
+        content: '';
+        background: $gray-100;
+        width: 440px;
+        height: 490px;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 30px 30px 30px 0px;
+        @media #{$extra-small-mobile} {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    & .background-layer {
+        position: absolute;
+        top: 38%;
+        left: 15%;
+        @media #{$extra-small-mobile} {
+            top: 34%;
+            left: 8%;
+        }
+    }
+    
+    & .feature-image {
+        text-align: end;
+    }
+}
