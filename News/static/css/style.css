@@ -540,7 +540,7 @@ img {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 10px 10px 20px;
-  background: #a295df;
+  background: #0097AC;
   border-radius: 50px;
   height: 60px;
 }
@@ -610,7 +610,7 @@ img {
 .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 2px;
-  background: #a295df;
+  background: #0097AC;
   opacity: 1;
   position: relative;
   border-radius: 0;
@@ -640,7 +640,7 @@ img {
 }
 
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #a295df;
+  background: #0097AC;
   width: 15px;
   -webkit-transition: .6s;
   -o-transition: .6s;
@@ -765,7 +765,7 @@ img {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  background-color: #a295df;
+  background-color: #0097AC;
   background-size: 200% auto;
   background-position: left center;
   -webkit-transition: .3s;

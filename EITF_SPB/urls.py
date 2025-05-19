@@ -24,10 +24,11 @@ from News.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
-    path('news/', PostListView.as_view(), name='news'),
-    path('news/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
-    path('contacts/', ContactFormView.as_view(), name='contacts'),
+    path('о-нас/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('новости/', PostListView.as_view(), name='news'),
+    path('новости/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
+    path('контакты/', FeedbackView.as_view(), name='contacts'),
+    path('обратная-связь/', FeedbackView.as_view(embedded=True), name='feedback')
 ]
 
 

@@ -15,11 +15,11 @@
 
                         <!-- Slider Content Start -->
                         <div class="video-bg">
-						<video src={% static 'video/bg.mp4' %} type="video/mp4" autoplay muted loop></video>
+						<video src={% static 'video/bg_light.mp4' %} type="video/mp4" autoplay playsinline muted loop></video>
 						<div class="effects"></div>
 							<div class="video-bg__content">
                             <h1 class="title">ФЕДЕРАЦИЯ ТАЭКВОНДО EITF <br>САНКТ-ПЕТЕРБУРГА</h1>
-                            <a href={% url 'contacts' %} class="btn btn-primary btn-outline-hover-primary">ПРИСОЕДЕНЯЙТЕСЬ К НАМ </a>
+                            <a href="{% url 'contacts' %}" class="btn btn-primary btn-outline-hover-primary">ПРИСОЕДЕНЯЙТЕСЬ К НАМ </a>
 							</div>
                         </div>
                         <!-- Slider Content End -->
@@ -51,8 +51,9 @@
                                             <img width="50px" src={% static 'images/icon/testimonial.png' %} alt="Testimonial Image">
                                         </div>
                                     <div class="testimonial-content">
-                                        <p>Моя мечта, чтобы Таэквон-До стало спортом номер 1, не только в Санкт-Петербурге, но и по всей России.</p>
-                                        <span>Сурненко Алексей Игоревич <br>Президент Федерации Таэквондо EITF Санкт-Петербурга</span>
+                                        <p>Выполнение движений в Таэквон-до с точки зрения законов биомеханики — единственный путь к единой технике и единому Таэквон-до.</p>
+                                        <span>Кан Рудольф Валентинович, <br>Президент Всероссийской Федерации Таэквон-До EITF,<br>
+                                         Грандмастер Таэквон-До</span>
                                     </div>
                                 </div>
                                 <!-- Single Testimonial wrapper End -->
