@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load static %}
+{% block title %} Новый пост {% endblock %}
+{% block content %}
+        <!-- Breadcrumb Section Start -->
+    <div class="section breadcrumb-section overlay" data-bg-image={% static 'images/banner/contact-banner.jpg' %}>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Breadcrumb wrapper Start -->
+                    <div class="breadcrumb-wrapper">
+                        <h1 class="title text-white" data-aos="fade-up" data-aos-duration="1100">Добавление поста</h1>
+                        
+                    </div>
+                    <!-- Breadcrumb wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+        <div class="section section-margin">
+            <div class="container">
+                <div class="row align-items-center m-b-n40">
+                    <div class="col-lg-12">
+                       <div class="contact-form">
+                        <!-- Section Title Start -->
+                        <div class="section-title p-b-15">
+                            <h4 class="title">Добавление поста</h4>
+                            <span></span>
+                        </div>
+                        <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            {{ form.as_p }}
+                             <div class="col-12" data-aos="fade-up" data-aos-duration="2600">
+                                <button type="submit" id="submit" name="submit" class="btn btn-dark btn-hover-primary">Отправить</button>
+                             </div>
+                        </form>
+  {% if form.errors %}
+    <div class="error">
+        <p>Пожалуйста, исправьте ошибки:</p>
+        <ul>
+            {% for error in form.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

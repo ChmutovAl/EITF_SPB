@@ -20,15 +20,19 @@ from django.conf.urls.static import static
 from django.urls import path
 from django.views.generic import TemplateView
 from News.views import *
+from News.converters import CyrillicSlugConverter
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('о-нас/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('новости/', PostListView.as_view(), name='news'),
-    path('новости/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
+    path('новости/<cyrslug:slug>/', PostDetailView.as_view(), name='post_detail'),
     path('контакты/', FeedbackView.as_view(), name='contacts'),
-    path('обратная-связь/', FeedbackView.as_view(embedded=True), name='feedback')
+    path('обратная-связь/', FeedbackView.as_view(embedded=True), name='feedback'),
+    path('новости/новый-пост', PostCreateView.as_view(), name='post_new'),
+    path('новости/<cyrslug:slug>/обновление', PostUpdateView.as_view(), name='post_update'),
+    # path('новости/<cyrslug:slug>/удалить', PostDeleteView.as_view(), name='post_delete'),
 ]
 
 

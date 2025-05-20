@@ -1,11 +1,12 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, FormView, View
+from django.views.generic import ListView, DetailView, View, CreateView, UpdateView, DeleteView
 
 from EITF_SPB.settings import DEFAULT_FROM_EMAIL
-from .forms import FeedbackForm
+from .forms import FeedbackForm, PostForm
 from .models import *
 
 
@@ -65,26 +66,19 @@ class FeedbackView(View):
         view.embedded = embedded  # Устанавливаем атрибут класса
         return view
 
-# class ContactFormView(FormView):
-#     form_class = FeedbackForm
-#     template_name = 'contact_form.html'
-#     success_url = reverse_lazy('home')
-#
-#     def form_valid(self, form):
-#         fio = f'{form.cleaned_data["last_name"]}  {form.cleaned_data["name"]}'
-#         type = f'{form.cleaned_data["type"]}'
-#         email = form.cleaned_data['email']
-#         phone = form.cleaned_data['phone']
-#         body_msg = form.cleaned_data['message']
-#         message = (f'Отправитель: {fio} \n'
-#                    f'Email: {email} \n'
-#                    f'Телефон: {phone} \n'
-#                    f'Тип отправителя: {type} \n'
-#                    f'Вопрос: {body_msg}')
-#         send_mail(
-#             subject ='Обратная связь',
-#             message = message,
-#             from_email = DEFAULT_FROM_EMAIL,
-#             recipient_list=['chmutov.aleks@yandex.ru',]
-#         )
-#         return super().form_valid(form)
+class PostCreateView(CreateView, LoginRequiredMixin):
+    model = Post
+    form_class = PostForm
+    template_name = 'news_create.html'
+    success_url = reverse_lazy('news')
+
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'news_create.html'
+    success_url = reverse_lazy('news')
+
+
+# class PostDeleteView(LoginRequiredMixin, DeleteView):
+#     model = Post

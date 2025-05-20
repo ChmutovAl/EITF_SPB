@@ -1,15 +1,38 @@
+import re
 from django.db import models
 from django.urls import reverse
+from django.core.validators import RegexValidator
+
+cyrillic_slug_validator = RegexValidator(
+    regex=r'^[-\w\u0400-\u04FF]+$',  # \u0400-\u04FF — диапазон кириллицы в Unicode
+    message='Slug может содержать только буквы, цифры, дефисы и подчёркивания.'
+)
+
+def cyrillic_slugify(value):
+    value = value.lower()  # в нижний регистр
+    value = re.sub(r'\s+', '-', value)  # пробелы → дефисы
+    # удалить всё, кроме букв (кириллица и латиница), цифр, дефисов и подчёркиваний
+    value = re.sub(r'[^\w\-а-яё0-9]', '', value, flags=re.UNICODE)
+    return value
 
 
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок')
     about = models.CharField(max_length=500, verbose_name='Краткое описание')
-    slug = models.SlugField(max_length=100, unique=True, blank=True, verbose_name='Slug')
+    slug = models.CharField(max_length=255,
+        unique=True,
+        validators=[cyrillic_slug_validator],
+        blank=True,
+        null=True)
     content = models.TextField(verbose_name='Текст')
     banner = models.ImageField(upload_to='post_image', verbose_name='Баннер записи')
     date_create = models.DateField(auto_now_add=True, verbose_name='Дата создания')
     date_update = models.DateField(auto_now=True, verbose_name='Дата редактирования')
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = cyrillic_slugify(self.title)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
